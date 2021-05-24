@@ -25,4 +25,4 @@ Method of connecting Amibroker with python is Heavily inspired by this [thread](
 - Python version used in this demo is 3.8.10 32 bit and is not tested on 64 bit version yet.
 - Pleas note that model provided in this repository is dummy one. We do not and will not publish currently used our model. Please train one yourself.
 - We have not tested the concept with more advanced from [Tensorflow](https://www.tensorflow.org/), [Keras](https://keras.io/), and [Pytorch](https://pytorch.org/) yet, but it should work with slight modification.
-- Not tested with [Virtual environment](https://docs.python.org/3/library/venv.html), [Anaconda](anaconda), or [Docker](https://hub.docker.com/_/python) yet, but it should work fine.
+- Not tested with [Virtual environment](https://docs.python.org/3/library/venv.html), [Anaconda](anaconda), or [Docker](https://hub.docker.com/_/python) yet.
