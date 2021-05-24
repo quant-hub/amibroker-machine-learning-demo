@@ -1,0 +1,43 @@
+// set option
+{
+    SetOption("InitialEquity", 1000000);
+	SetOption("MaxOpenPositions", 20);
+	SetOption("MinShares", 100);
+	RoundLotSize = 100;
+	SetOption("CommissionMode", 1);
+	SetOption("CommissionAmount", 0.075);
+	SetOption("ExtraColumnsLocation", 1);
+	SetTradeDelays(1, 1, 0, 0);
+}
+
+//buy and sell price
+{
+	BuyPrice = Open;
+	SellPrice = Open;
+}
+	
+// PositionSize
+{
+	SetPositionSize(5, spsPercentOfEquity);
+}
+
+// Buy Sell Signal
+{
+	ABex = CreateObject("ABTest.main");
+	ret_value = ABex.MyABMethod(O, H, L, C);
+
+    sellCon = MA(C, 20) > C;
+	guardCon = MA(C, 20) < C;
+	
+	Buy = ret_value > 0.99 AND guardCon;
+	Sell = sellCon;
+}
+
+// PositionScore
+{
+	PositionScore = C*V;
+}
+
+Filter =  True;
+AddColumn(C,"C");
+AddColumn(ret_value,"ret_value");
